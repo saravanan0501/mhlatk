@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /* @var $block \Magento\Catalog\Block\Product\View\AbstractView */?>
+<?php $_product = $block->getProduct() ?>
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$categories = $_product->getCategoryIds();
+foreach($categories as $category){
+	$cat = $objectManager->create('Magento\Catalog\Model\Category')->load($category);
+}
+?>
+<div class="prod_det_list">
+	<li class="product_field">
+		<label class="prod_field_title"><?= /* @escapeNotVerified */ __('Product Code') ?>:</label>
+		<div class="prod_field_content"><?= $_product->getSku(); ?></div>
+	</li>
+	
+	<li class="product_field">
+		<label class="prod_field_title"><?= /* @escapeNotVerified */ __('Main Category') ?>:</label>
+		<div class="prod_field_content"><a href="<?= $cat->getUrl(); ?>"><?= $cat->getName(); ?></a></div>
+	</li>
+	
+	<?php if ($block->displayProductStockStatus()): ?>
+		<?php if ($_product->isAvailable()): ?>
+			<li class="stock available" title="<?= /* @escapeNotVerified */ __('Availability') ?>">
+				<label class="prod_field_title"><?= /* @escapeNotVerified */ __('Availability') ?>:</label>
+				<div class="prod_field_content"><?= /* @escapeNotVerified */ __('In stock') ?></div>
+			</li>
+		<?php else: ?>
+			<li class="stock unavailable" title="<?= /* @escapeNotVerified */ __('Availability') ?>">
+				<label class="prod_field_title"><?= /* @escapeNotVerified */ __('Availability') ?>:</label>
+				<div class="prod_field_content"><?= /* @escapeNotVerified */ __('Out of stock') ?></div>
+			</li>
+		<?php endif; ?>
+	<?php endif; ?>
+
+</div>

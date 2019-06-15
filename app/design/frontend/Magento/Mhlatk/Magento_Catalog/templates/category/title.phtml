@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var $block \Magento\Theme\Block\Html\Title
+ */
+$cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
+$title = '';
+if (trim($block->getPageHeading())) {
+    $title = '<span class="base" data-ui-id="page-title-wrapper" ' .  $block->getAddBaseAttribute() . '>'
+        . $block->escapeHtml($block->getPageHeading()) . '</span>';
+}
+?>
+<?php if ($title): ?>
+<div class="inner_banner">
+	<div class="container">
+		<div class="inner_banner_wrap" style="background-image: url(<?php echo $this->getViewFileUrl('images/inner_banner_default.jpg'); ?>);">
+			<div class="container">
+				<h2 class="page-title"
+					<?php if ($block->getId()): ?> id="<?= /* @escapeNotVerified */ $block->getId() ?>" <?php endif; ?>
+					<?php if ($block->getAddBaseAttributeAria()): ?>
+						aria-labelledby="<?= /* @escapeNotVerified */ $block->getAddBaseAttributeAria() ?>"
+					<?php endif; ?>>
+					<?= /* @escapeNotVerified */ $title ?>
+				</h2>
+				<?= $block->getChildHtml() ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endif; ?>

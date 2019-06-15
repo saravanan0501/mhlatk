@@ -1,0 +1,144 @@
+@media( min-width: 1199px){
+    
+	
+}
+
+@media( min-width: 992px){
+	
+	
+}
+
+
+@media (min-width: 767px) {
+    .product_list_home ul li:hover .product_price{ opacity: 0; }
+}
+
+@media( max-width: 1199px){
+    .main_menu li a{ padding-left: 10px; padding-right: 10px;} 
+    .nav_right ul li a{ padding-left: 10px;}
+    .nav_middle{ margin-left: 10px;}
+	
+}
+
+@media (max-width: 1100px) {
+    .main_menu li a{ font-size: 11px;}
+    .category_main{ font-size: 13px; margin-left: 6px;}
+    .add_to_cartbtn:after{ right: 10px;  background-size: 80% auto; top: 5px;}
+    .add_to_cartbtn{padding: 3px 32px 3px 13px; font-size: 12px; }
+      .show_addtocart{ width: auto; max-width: 174px;}
+}
+
+@media (max-width: 991px) {
+    .product_list_home ul li{ width: 33.33%; margin-bottom: 10px;  padding: 0 5px;}  
+    .featured_list ul{ flex-wrap: wrap;}
+    .featured_list ul li{ width: 33.33%; margin-bottom: 10px;  padding: 0 5px;}  
+    .featured_outer{ max-width: 100%; }
+    .featured_outer figure img{ width: 100%;}
+     header{ display: none;}
+   .mobile_navigation{  display: block;} 
+    .footer_top_right{   width: 65%; }
+    .customer_column {   width: 25%;}
+    .howtobuy_column {   width: 25%;}
+}
+
+
+
+
+
+
+@media (max-width: 767px) {
+    footer{ background: #e7e6eb;}
+    .customer_column li, .information_column li{ display: inline-block; }
+    .customer_column li a, .information_column li a{ border-right: 1px solid #6b6b6d; margin-right: 10px; padding-right: 10px; }
+    .customer_column li:last-child a, .information_column li:last-child a{ border-right: 0px solid #6b6b6d; margin-right: 0px; padding-right: 0px; }
+    .customer_column{order: 2; padding: 0 !important;}
+    .information_column{order: 1;}
+    .myacccount_column, .howtobuy_column{ display: none;}
+    .customer_column, .layout_blocker{ width: 100%; padding: 0 0 15px 0; }
+    .footer_top_right{   width: 100%; }
+     .footer_top_left{ display: none;}
+    .featured_list ul li{ width: 33.33%; margin-bottom: 10px;  padding: 0 5px;}   
+    .product_list_home ul li{ width: 33.33%;  }   
+    .featured_outer { max-width: 100%;}
+    .featured_outer figure img{ width: 100%;}
+    .featured_list ul{ margin: 0 -10px;}
+    .product_list_home figcaption{ padding-bottom: 60px;}
+    .show_addtocart{ display: none;}
+    .mob_addtocart{  background-image: url(../images/cart_icon.png); width: 21px; position: absolute; height: 17px; background-size: cover;   right: 22px; bottom: 4px; display: block;}
+    .product_price{ text-align: left;}
+     .price_original{ font-size: 14px;}
+     .mob_only_process{ display: block; }
+     .mob_only_process .process_wrap{ background: #d6d6dc; text-align: center; padding: 12px 10px; justify-content: center;}
+    .our_process{ display: none;}
+    .mob_only_process{ display: block;}
+    .dsktop_only{ display: none;}
+    .mobile_only{ display: block;}
+    .ramadan_add{  margin: 0 0 20px;}
+    .ramadan_add .mobile_only{width: 100%;}
+    .ftr_right{ display: none;}
+    .ftr_copy{ width: 100%; text-align: center; }
+    .footer_copy .ftr_copy p{margin-top: 15px;}
+   
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+@media (max-width: 520px) {
+   .show_cart{width: 280px;} 
+   .responsive_bar_popup{width: 280px;} 
+     .ecomm_select{ display: flex;}
+     .ecomm_product_detail{ display: block;}
+     .ecomm_product_quantity{ margin-bottom: 10px; }
+    .cart_outer {   padding: 0 10px 10px;}
+    .ecomm_product_img{ width: auto;}
+    .featured_outer h4{ font-size: 14px;}
+    
+
+}
+
+ @media (max-width: 439px) {
+     .newsletter_outer .input_filed{  width: 55%;}
+     .newsletter_outer .subc_btn{ width: 44%;}
+     .ftr_social {    float: none; }
+     .frt_hapy {  float: none; margin-top: 15px;   padding-right: 0px; text-align: center;}
+     .mobile_search {   width: 285px;}
+     .featured_list ul li{ width: 50%;}
+     .product_list_home ul li{ width: 50%; margin-bottom: 10px;  padding: 0 5px;} 
+    
+     .mobile_search .search-input{ font-size: 13px;}
+     
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+ 
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

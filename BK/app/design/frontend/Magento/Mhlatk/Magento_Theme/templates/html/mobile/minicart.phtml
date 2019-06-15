@@ -1,0 +1,78 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Checkout\Block\Cart\Sidebar */
+?>
+
+<div class="cart-count">
+	<div class="hrt_carts">		
+		<div class="cart-count">
+			<p>
+				<a class="ecomm_my_cart_link action" href="<?= /* @escapeNotVerified */ $block->getShoppingCartUrl() ?>"
+				   data-bind="scope: 'minicart_content'">
+					<img src="<?php echo $this->getViewFileUrl('images/cart_icon.png'); ?>">
+					<sup class="counter qty empty"
+						  data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+						<span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+					</sup>
+				</a>
+			</p>
+			<?php if ($block->getIsNeedToDisplaySideBar()): ?>
+				<div class="show_cart">
+					<div class="ecomm_cart">
+						<form>
+							<div class="" data-block="mobile-minicart" >
+								<div class="overflow"
+									 data-role="dropdownDialog"
+									 data-mage-init='{"dropdownDialog":{
+										"triggerEvent" : "hover",
+										"appendTo":"[data-block=mobile-minicart]",
+										"triggerTarget":".showcart",
+										"timeout": "2000",
+										"closeOnMouseLeave": false,
+										"closeOnEscape": true,
+										"triggerClass":"active",
+										"parentClass":"active",
+										"buttons":[]}}'>
+									<div id="mobile-minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+										<!-- ko template: getTemplate() --><!-- /ko -->
+									</div>
+									<?= $block->getChildHtml('minicart.addons') ?>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			<?php else: ?>
+				<script>
+					require(['jquery'], function ($) {
+						$('a.action.showcart').click(function() {
+							$(document.body).trigger('processStart');
+						});
+					});
+				</script>
+			<?php endif ?>
+			<script>
+				window.checkout = <?= /* @escapeNotVerified */ $block->getSerializedConfig() ?>;
+			</script>
+			<script type="text/x-magento-init">
+			{
+				"[data-block='mobile-minicart']": {
+					"Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>
+				},
+				"*": {
+					"Magento_Ui/js/block-loader": "<?= /* @escapeNotVerified */ $block->getViewFileUrl('images/loader-1.gif') ?>"
+				}
+			}
+			</script>
+		</div>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,42 @@
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		
+		<referenceContainer name="header-wrapper" htmlClass="header_top">
+			<container name="header-top-container" label="Header Top Container" as="header-top-container" htmlTag="div" htmlClass="container">
+				<container name="header_top_wrapper" label="Header Top Wrapper" as="header_top_wrapper" htmlTag="div" htmlClass="header_top_wrapper">
+					<container name="header_cart" label="Header Cart" as="header_cart" after="top.search" htmlTag="div" htmlClass="header_cart">
+						<container name="header_cart_wrapper" label="Header Cart Wrapper" as="header_cart_wrapper" htmlTag="div" htmlClass="header_cart_wrapper" />
+					</container>
+				</container>
+			</container>
+		</referenceContainer>
+		
+		<referenceContainer name="page.top">
+			<container name="mobile-nav-container" htmlClass="mobile_navigation" htmlTag="div">
+				<block class="Magento\Framework\View\Element\Template" name="mobile-nav" template="Magento_Theme::html/mobilenav.phtml">
+					<block class="Magento\Theme\Block\Html\Header\Logo" name="mobile-logo" template="Magento_Theme::html/mobile/logo.phtml" />
+					<block class="Magento\Framework\View\Element\Template" name="mobile-search" template="Magento_Theme::html/mobile/search.phtml" />
+				</block>
+			</container>
+		</referenceContainer>
+		
+		<referenceContainer name="footer-container">
+			<block class="Magento\Framework\View\Element\Template" name="footer-menu-links" template="Magento_Theme::html/footer.phtml"/>
+		</referenceContainer>
+		
+		<move element="logo" destination="header_top_wrapper" as="logo" before="-"/>
+		<move element="top.search" destination="header_top_wrapper" as="topSearch" after="logo" />
+		
+		<move element="store_language" destination="header_cart_wrapper" as="store_language" />
+		<move element="minicart" destination="header_cart_wrapper" as="minicart" after="store_language" />
+		
+		<move element="catalog.topnav" destination="header.container" as="catalog.topnav" after="header-wrapper"/>
+		<move element="copyright" destination="footer-container" as="copyright" after="footer-menu"/>
+		
+		<referenceContainer name="header.panel.wrapper" remove="true" />
+		<referenceBlock name="compare-link-wrapper" remove="true" />
+		<referenceBlock name="navigation.sections" remove="true" />
+		<referenceContainer name="footer" remove="true" />	
+		
+	</body>
+</page>

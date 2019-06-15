@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<ul class="price_list_wrap">
+	<li>
+		<div class="ecomm_product_price">
+			<div class="price_original"><?php echo $this->getChildHtml(); ?></div>
+			<p>All prices include VAT</p>
+		</div>
+	</li>
+	<li>
+		<div class="delivery_status"><img src="<?php echo $this->getViewFileUrl('images/deliver_pro.png'); ?>">Free Delivery</div>
+		<div class="warrenty_status"><img src="<?php echo $this->getViewFileUrl('images/produ_war.png'); ?>">One Year Warranty</div>
+	</li>
+</ul>

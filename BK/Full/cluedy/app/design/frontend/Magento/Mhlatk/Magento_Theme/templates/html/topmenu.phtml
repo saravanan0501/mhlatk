@@ -1,0 +1,168 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+<nav data-action="navigation">
+	<div class="container">
+		<div class="nav_left">
+			<img src="images/cat_icon.png"> 
+			<ul class="cat_mainer">
+				<li><a class="category_main">CATEGORIES</a>  
+					<ul class="catry_menu">
+						<li>
+							<a href="#">Mobile Accessories</a> 
+							<div class="sub_catry">
+								<div class="sub_catry_flex">
+									<div class="sub_catry_left">
+									  <ul>
+									  <li><a href="#"> Mobile Covers</a></li>
+									  <li><a href="#">Power Banks &amp; Chargers</a></li>
+									  <li><a href="#">Ear Phones</a></li>
+									  <li><a href="#">Charging Cables</a></li>
+									  <li><a href="#">Gaming Accessories</a></li>
+									  <li><a href="#">Popsockets</a></li>
+									  </ul>
+									</div> 
+									<div class="sub_catry_right">
+										<div class="image_preview"><figure><img src="images/cat_mob1.png"></figure></div>
+										<div class="image_preview"><figure><img src="images/cat_mob2.png"></figure></div>
+									</div>
+								</div>
+							</div>
+						</li>          
+						<li>
+							<a href="#">Electronics</a>
+							<div class="sub_catry">
+								<div class="sub_catry_flex">
+									<div class="sub_catry_left">
+									  <ul> 
+									  <li><a href="#">Speakers</a></li>
+									  <li><a href="#">Headphone</a></li>
+									  <li><a href="#">Computer Accessories</a></li>
+									  <li><a href="#">Power Hubs &amp; Extensions</a></li>
+									  <li><a href="#">Adaptors</a></li> 
+									  </ul>
+									</div> 
+                   <div class="sub_catry_right">
+                    <div class="image_preview"><figure><img src="images/cat_elc1.jpg"></figure></div>
+                    <div class="image_preview"><figure><img src="images/cat_elc2.jpg"></figure></div>
+                  </div>
+                  </div>
+              </div>   
+                    
+                    </li>          
+          <li><a href="#">Gadgets &amp; Lifestlye</a>
+                     <div class="sub_catry">
+              <div class="sub_catry_flex">
+                  <div class="sub_catry_left">
+              <ul> 
+              <li><a href="#">Cameras</a></li>
+              <li><a href="#">Watches</a></li>
+              <li><a href="#">Drones</a></li>
+              <li><a href="#">To Be Named(Black Rose)</a></li> 
+              </ul>
+                      </div> 
+                   <div class="sub_catry_right">
+                    <div class="image_preview"><figure><img src="images/cat_cad1.jpg"></figure></div>
+                    <div class="image_preview"><figure><img src="images/cat_cad2.jpg"></figure></div>
+                  </div>
+                  </div>
+              </div>  
+                    </li>          
+          <li><a href="#">Home &amp; Kitchen</a>
+                        <div class="sub_catry">
+              <div class="sub_catry_flex">
+                  <div class="sub_catry_left">
+              <ul>  
+              <li><a href="#">Coffee Makers</a></li>
+              <li><a href="#">Vaccum Cleaners</a></li>
+              <li><a href="#">Blenders</a></li>
+              <li><a href="#">Lamps</a></li> 
+              <li><a href="#">Fans</a></li> 
+              <li><a href="#">Room Freshners</a></li> 
+              </ul>
+                      </div> 
+                   <div class="sub_catry_right">
+                    <div class="image_preview"><figure><img src="images/cat_home1.jpg"></figure></div>
+                    <div class="image_preview"><figure><img src="images/cat_home2.jpg"></figure></div>
+                  </div>
+                  </div>
+              </div> 
+                    </li>          
+          <li><a href="#">Wallets &amp; Bags</a>
+                          <div class="sub_catry">
+              <div class="sub_catry_flex">
+                  <div class="sub_catry_left">
+              <ul>  
+              <li><a href="#">Wallets</a></li>
+              <li><a href="#">Wallet Cum Powerbank</a></li>
+              <li><a href="#">Card Holder</a></li>
+              <li><a href="#">Travel Bag</a></li> 
+              <li><a href="#">Backpack</a></li> 
+              <li><a href="#">Storage Bags</a></li> 
+              </ul>
+                      </div> 
+                   <div class="sub_catry_right">
+                    <div class="image_preview"><figure><img src="images/cat_wal1.jpg"></figure></div>
+                    <div class="image_preview"><figure><img src="images/cat_wal2.jpg"></figure></div>
+                  </div>
+                  </div>
+              </div> 
+                    </li>          
+          <li><a href="#">Health &amp; Beauty</a> 
+    <div class="sub_catry">
+              <div class="sub_catry_flex">
+                  <div class="sub_catry_left">
+              <ul>  
+              <li><a href="#">Hair Dryer</a></li>
+              <li><a href="#">Skin Care</a></li>
+              <li><a href="#">Cosmetics</a></li>
+              <li><a href="#">Hair Straighteners</a></li> 
+              <li><a href="#">Health Bands</a></li> 
+              <li><a href="#">Others</a></li> 
+              </ul>
+                      </div> 
+                   <div class="sub_catry_right">
+                    <div class="image_preview"><figure><img src="images/cat_hea1.jpg"></figure></div>
+                    <div class="image_preview"><figure><img src="images/cat_hea2.jpg"></figure></div>
+                  </div>
+                  </div>
+              </div> 
+                    </li>   
+          </ul></li></ul>
+        
+          
+          </div>
+                <div class="nav_middle">
+          
+            <ul class="main_menu">
+             <li><a href="#">HOME</a></li>        
+             <li><a href="#">BEAUTY &amp; TECH</a></li>        
+             <li><a href="#">INNOVATIVE PRODUCTS</a></li>        
+             <li><a href="#">gift ideas</a></li>        
+             <li><a href="#">modern kitchen</a></li>        
+             <li><a href="#">best sellers</a></li>   
+            </ul>
+          </div>
+                <div class="nav_right"><ul><li><a href="#">ramadan deals</a> </li></ul></div>
+                </div>
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}' style="display: none">
+        <?= /* @escapeNotVerified */ $_menu ?>
+        <?= /* @escapeNotVerified */ $block->getChildHtml() ?>
+    </ul>
+</nav>

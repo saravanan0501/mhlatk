@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="cluedy_products_list" class="Cluedy\Mhlatk\Block\Widget\Bestseller"
+            placeholder_image="Cluedy_Mhlatk::images/widget_block.png">
+        <label translate="true">Bestseller Products List</label>
+        <description>Bestseller Products List</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="collection_sort_by" xsi:type="select" visible="true"
+                       source_model="Cluedy\Mhlatk\Model\Config\Source\SortBy">
+                <label translate="true">Sort Collection By</label>
+            </parameter>
+            <parameter name="collection_sort_order" xsi:type="select" visible="true"
+                       source_model="Cluedy\Mhlatk\Model\Config\Source\SortOrder">
+                <label translate="true">Sort Collection Order</label></parameter>
+            <parameter name="show_pager" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Page Control</label>
+            </parameter>
+            <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager" value="1" />
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="bestseller_template" value="Cluedy_Mhlatk::widget/bestseller.phtml">
+                        <label translate="true">Bestseller Products Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+            <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
+                       class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+                <label translate="true">Conditions</label>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="content">
+                <template name="bestseller_template" value="bestseller_template" />
+            </container>
+            <container name="content.top">
+                <template name="bestseller_template" value="bestseller_template" />
+            </container>
+        </containers>
+    </widget>
+	<widget id="cluedy_category_list" class="Cluedy\Mhlatk\Block\Widget\Category">
+        <label translate="true">Featured Category</label>
+        <description>Featured Category List Widget</description>
+        <parameters>
+            <parameter name="blocktitle" xsi:type="text"  visible="true" required="true" sort_order="1">
+                <label translate="true">Block Title</label>
+            </parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="top_products" value="Cluedy_Mhlatk::widget/category.phtml">
+                        <label translate="true">Featured Category Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+	<widget class="Cluedy\Mhlatk\Block\Widget\Banner" id="cluedy_banner_widget">
+        <label translate="true">Banner Widget</label>
+        <description translate="true">Banner list</description>
+        <parameters>
+            <parameter name="banner_id" xsi:type="select" required="true" visible="true" source_model="Cluedy\Mhlatk\Model\Config\Source\Banners">
+                <label translate="true">Select Banner</label>
+            </parameter>
+			<parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="banner_template" value="Cluedy_Mhlatk::widget/banner.phtml">
+                        <label translate="true">Banner Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

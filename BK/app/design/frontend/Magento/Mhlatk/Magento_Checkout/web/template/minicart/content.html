@@ -1,0 +1,76 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<h6  translate="'My Cart'" />
+
+<form>
+<div class="cart_outer">
+	<div class="overflow">
+		<if args="getCartParam('summary_count')">
+			<div id="mini-cart" class="minicart-items" data-bind="foreach: { data: getCartItems(), as: 'item' }">
+				<each args="$parent.getRegion($parent.getItemRenderer(item.product_type))"
+					  render="{name: getTemplate(), data: item}"
+				/>
+			</div>
+		</if>
+	</div>
+
+    <if args="getCartParam('summary_count')">
+        <div class="items-total" style="display: none">
+            <span class="count" if="maxItemsToDisplay < getCartLineItemsCount()" text="maxItemsToDisplay"/>
+            <translate args="'of'" if="maxItemsToDisplay < getCartLineItemsCount()"/>
+            <span class="count" text="getCartLineItemsCount()"/>
+                <!-- ko if: (getCartLineItemsCount() === 1) -->
+                    <span translate="'Item in Cart'"/>
+                <!--/ko-->
+                <!-- ko if: (getCartLineItemsCount() > 1) -->
+                    <span translate="'Items in Cart'"/>
+                <!--/ko-->
+        </div>
+
+        <!--<each args="getRegion('subtotalContainer')" render=""/>
+        <each args="getRegion('extraInfo')" render=""/>-->
+
+        <p class="buttons" if="getCartParam('possible_onepage_checkout')">
+			<a
+				id="top-cart-btn-checkout"
+				type="button"
+				class="action button"
+				data-action="close"
+				data-bind="
+					attr: {
+						title: $t('Checkout')
+					},
+					click: closeMinicart()
+				"
+				translate="'Checkout'"
+			/>
+        </p>
+    </if>
+
+    <ifnot args="getCartParam('summary_count')">
+        <strong class="subtitle empty"
+                data-bind="visible: closeSidebar()"
+                translate="'You have no items in your shopping cart.'"
+        />
+        <if args="getCartParam('cart_empty_message')">
+            <p class="minicart empty text" text="getCartParam('cart_empty_message')"/>
+            <div class="actions">
+                <div class="secondary">
+                    <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
+                        <span translate="'View and Edit Cart'"/>
+                    </a>
+                </div>
+            </div>
+        </if>
+    </ifnot>
+
+    <div id="minicart-widgets" class="minicart-widgets">
+        <each args="getRegion('promotion')" render=""/>
+    </div>
+</div>
+</form>
+<each args="getRegion('sign-in-popup')" render=""/>

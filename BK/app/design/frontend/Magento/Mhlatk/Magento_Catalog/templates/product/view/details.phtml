@@ -1,0 +1,57 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="ecomm_bottom">
+	<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
+        <?php $layout = $block->getLayout(); ?>
+        <div class="product_deisp" data-mage-init='{"tabs":{"openedState":"active"}}'>
+			<ul id="tabs" class="tab_header">
+            <?php foreach ($detailedInfoGroup as $name):?>
+                <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                ?>
+                
+                    <li class="data item title"
+						aria-labelledby="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title"
+						data-role="collapsible" id="tab-label-<?= /* @escapeNotVerified */ $alias ?>">
+						<a class="data switch"
+						   tabindex="-1"
+						   data-toggle="switch"
+						   href="#<?= /* @escapeNotVerified */ $alias ?>"
+						   id="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title">
+							<?= /* @escapeNotVerified */ $label ?>
+						</a>
+					</li> 
+            <?php endforeach;?>
+			</ul>
+			
+			<?php foreach ($detailedInfoGroup as $name):?>
+				<?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                ?>
+				<div class="data item content" id="<?= /* @escapeNotVerified */ $alias ?>" data-role="content">
+                    <?= /* @escapeNotVerified */ $html ?>
+                </div>
+			<?php endforeach;?>
+        </div>
+	<?php endif; ?>
+	
+	<?php echo $this->helper('Magento\Catalog\Helper\Output')
+					->productAttribute($block->getProduct(), $block->getProduct()->getOtherContent(), 'other_content'); ?>
+</div>

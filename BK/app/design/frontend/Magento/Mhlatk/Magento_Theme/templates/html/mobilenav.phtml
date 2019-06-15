@@ -1,0 +1,13 @@
+<div class="mobile_navigation_wrap">
+	<div class="responsive_left">
+		<div class="responsive_menu_icon"><p><img src="<?php echo $this->getViewFileUrl('images/menu_icon.png'); ?>"></p></div>
+		<?php echo $this->getChildHtml('mobile-logo'); ?>
+	</div>
+	<div class="responsive_right">
+		<?php echo $this->getChildHtml('mobile-search'); ?>
+		<?php echo $this->getLayout()
+						->createBlock('\Magento\Checkout\Block\Cart\Sidebar')
+						->setTemplate('Magento_Theme::html/mobile/minicart.phtml')
+						->toHtml(); ?>
+	</div>
+</div>

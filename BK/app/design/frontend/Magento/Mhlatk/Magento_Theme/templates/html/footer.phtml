@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORES;
+$phone = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('general/store_information/phone',$storeScope);
+?>
+<div class="container">
+    <div class="footer_top">
+		<div class="footer_top_left"><p>Call us at<br><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p></div>
+		<div class="footer_top_right">
+			<div class="footer_top_right_wrap">
+			  <div class="ftr_social">
+				<h6>follow US</h6>
+				  <ul>
+				   <li><a class="com_con fb_icon" href="#">facebook</a> </li>
+				   <li><a class="com_con twt_icon" href="#">twitter</a> </li>
+				   <li><a class="com_con ins_icon" href="#">instagram</a> </li>
+				   <li><a class="com_con link_icon" href="#">linkedin</a> </li>
+				  </ul>
+				</div>
+				<div class="frt_hapy"><img src="<?php echo $this->getViewFileUrl('images/happy_shop.png'); ?>"></div>
+			</div>
+		   
+		</div>
+	</div>
+	<div class="footer_bottom">
+		<div class="footer_lik_wrap">
+			<div class="colum4">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_links')->toHtml(); ?>
+			</div>
+		</div>
+   </div>
+</div>
+<div class="scroll_top visble_scroll"><p><span class="fa fa-arrow-up"></span></p></div>
+<script type="text/javascript">
+    require(['js/custom-skin'], function () {});
+</script>

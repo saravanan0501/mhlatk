@@ -1,0 +1,23 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Store\Block\Switcher $block */
+?>
+<?php if (count($block->getStores())>1): ?>
+<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : '' ?>
+<div class="header_lang" data-ui-id="language-switcher" id="switcher-language<?= $block->escapeHtmlAttr($id) ?>">
+    <div class="header_lang_wrap">
+		<?php foreach ($block->getStores() as $_lang): ?>
+			<?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+				<img src="<?php echo $this->getViewFileUrl('images/count.png'); ?>">
+				<p class="view-<?= $block->escapeHtml($_lang->getCode()) ?>"><?= $block->escapeHtml($_lang->getName()) ?></p>
+			<?php endif; ?>
+		<?php endforeach; ?>
+    </div>
+</div>
+<?php endif; ?>

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../vendor/magento/framework/Module/etc/module.xsd">
-	<head>
-		<css src="css/font-awesome.min.css"/>
-		<css src="css/common-skin.css" media="all"/>
-		<css src="css/common-skin-responsive.css" media="all"/>
-		<css src="css/custom.css" media="all"/>
-	</head>
-</page>
